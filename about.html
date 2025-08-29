@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TRAILBLAZE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #e60012, #b30010);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo::before {
+            content: "⚡";
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .main-content {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .page-title {
+            text-align: center;
+            color: #e60012;
+            margin-bottom: 3rem;
+            font-size: 3rem;
+        }
+        
+        .about-section {
+            margin-bottom: 4rem;
+        }
+        
+        .about-section h2 {
+            color: #e60012;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .about-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #e60012;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .value-card h3 {
+            color: #e60012;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .company-stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 2rem;
+            color: white;
+            text-align: center;
+            margin: 4rem 0;
+            border-radius: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-content h3 {
+            color: #e60012;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">TRAILBLAZE</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">About TRAILBLAZE</h1>
+        
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>
+                TRAILBLAZE represents the pinnacle of precision cutting tools, manufactured by A.N. GUPTA STEEL PVT.LTD. With our commitment to "Precision In Every Cut," we have established ourselves as a leading manufacturer of high-quality scissors and cutting tools.
+            </p>
+            <p>
+                Founded with the vision of creating tools that combine functionality with durability, TRAILBLAZE has become synonymous with excellence in the cutting tools industry. Our products are designed to meet the diverse needs of students, professionals, crafters, and everyday users.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>
+                At TRAILBLAZE, our mission is to provide cutting-edge tools that enhance productivity and creativity. We believe that precision tools should be accessible to everyone, whether you're a student learning to cut precisely, a professional requiring reliable tools, or an artist stitching stories and giving joy through creative expression.
+            </p>
+        </div>
+
+        <div class="company-stats">
+            <h2>Our Achievements</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1M+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Product Variants</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Quality Assurance</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🎯 Precision</h3>
+                    <p>Every TRAILBLAZE product is crafted with meticulous attention to detail, ensuring precise cuts every time.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💎 Quality</h3>
+                    <p>We use only the finest materials and advanced manufacturing processes to create products that last.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🚀 Innovation</h3>
+                    <p>Continuously improving our designs and technology to meet evolving customer needs.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🤝 Trust</h3>
+                    <p>Building lasting relationships with customers through reliable products and exceptional service.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🌟 Excellence</h3>
+                    <p>Striving for perfection in everything we do, from design to delivery.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🎨 Creativity</h3>
+                    <p>Enabling creativity and self-expression through our versatile cutting tools.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Manufacturing Excellence</h2>
+            <p>
+                Our state-of-the-art manufacturing facility in Delhi employs advanced technologies and strict quality control measures. Each scissor undergoes rigorous testing to ensure it meets our high standards for sharpness, durability, and ergonomic design.
+            </p>
+            <p>
+                We are committed to sustainable manufacturing practices and continuously invest in research and development to bring innovative products to market.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Location</h2>
+            <p>
+                <strong>A.N. GUPTA STEEL PVT.LTD</strong><br>
+                GROUND FLOOR, KH. NO.31/13<br>
+                VILLAGE ZINDPUR<br>
+                LANDMARK NEAR TIVOLI GARDEN<br>
+                North East Delhi, Delhi, 110036
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>TRAILBLAZE</h3>
+            <p>Precision In Every Cut</p>
+            <p style="margin-top: 2rem;">Copyright © 2025 A.N. GUPTA STEEL PVT.LTD All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
