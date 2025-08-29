@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAILBLAZE - Precision In Every Cut</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #e60012, #b30010);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo::before {
+            content: "⚡";
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "✂️";
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content .brand-name {
+            color: #e60012;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .cta-button {
+            background: #e60012;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(230,0,18,0.3);
+        }
+        
+        .cta-button:hover {
+            background: #b30010;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(230,0,18,0.4);
+        }
+        
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #e60012;
+            font-size: 2.5rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            color: #e60012;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .products {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .products h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #e60012;
+            font-size: 2.5rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            border-color: #e60012;
+            transform: translateY(-3px);
+        }
+        
+        .product-card h3 {
+            color: #e60012;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card .model {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .why-choose {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 6rem 2rem;
+            color: white;
+        }
+        
+        .why-choose-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .why-choose h2 {
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .benefit-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-content h3 {
+            color: #e60012;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">TRAILBLAZE</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1><span class="brand-name">TRAILBLAZE</span></h1>
+            <p>PRECISION IN EVERY CUT</p>
+            <a href="contact.html" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Choose TRAILBLAZE?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>✂️ Precision Cutting</h3>
+                <p>Experience unmatched precision with every cut. Our scissors are designed for accuracy and smooth operation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎓 Educational Excellence</h3>
+                <p>Cut precisely, learn effectively. Perfect for students, teachers, and educational institutions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌈 Creative Expression</h3>
+                <p>Stitching stories, giving joy. Ideal for crafts, sewing, and creative projects of all kinds.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Professional Scissors</h3>
+                <div class="model">Model: TR-31</div>
+                <p>High-quality stainless steel scissors with ergonomic design. Perfect for professional use and everyday tasks.</p>
+            </div>
+            <div class="product-card">
+                <h3>Student Scissors</h3>
+                <div class="model">Educational Series</div>
+                <p>Safe, durable scissors designed specifically for students. Available in vibrant colors to make learning fun.</p>
+            </div>
+            <div class="product-card">
+                <h3>Craft Scissors</h3>
+                <div class="model">Creative Collection</div>
+                <p>Specialized scissors for crafting, sewing, and artistic projects. Designed for precision and comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="why-choose-content">
+            <h2>The TRAILBLAZE Advantage</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>🔧 Superior Quality</h3>
+                    <p>Manufactured with premium materials for lasting durability</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>⚡ Sharp Performance</h3>
+                    <p>Maintains sharpness longer than conventional scissors</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>👥 Ergonomic Design</h3>
+                    <p>Comfortable grip reduces hand fatigue during extended use</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🎨 Versatile Applications</h3>
+                    <p>Perfect for office, school, home, and professional use</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>TRAILBLAZE</h3>
+            <p>Precision In Every Cut</p>
+            <p style="margin-top: 2rem;">Copyright © 2025 A.N. GUPTA STEEL PVT.LTD All rights reserved.</p>
+            <p>GROUND FLOOR, KH. NO.31/13, VILLAGE ZINDPUR, LANDMARK NEAR TIVOLI GARDEN, North East Delhi, Delhi, 110036</p>
+        </div>
+    </footer>
+</body>
+</html>
